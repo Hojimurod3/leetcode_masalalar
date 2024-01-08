@@ -1,0 +1,12 @@
+class Solution:
+    def percentageLetter(self, s: str, letter: str) -> int:
+        if not s or not letter:
+            return 0
+
+        letter = s.count(letter)
+        number = len(s)
+        if number == 0:
+            return 0
+
+        percent = (letter / number) * 100
+        return int(percent)
