@@ -1,0 +1,8 @@
+class Solution:
+    def findDelayedArrivalTime(self, arrivalTime: int, delayedTime: int) -> int:
+        result = (arrivalTime + delayedTime) % 24
+
+        if result == 24:
+            result = 0
+
+        return result
