@@ -1,0 +1,20 @@
+class Solution:
+    def interpret(self, command: str) -> str:
+        goal = ""
+        i = 0
+
+        while i < len(command):
+            if command[i] == 'G':
+                goal+= 'G'
+                i += 1
+            elif command[i:i+2] == '()':
+                goal+= 'o'
+                i+= 2
+            elif command[i:i+4] == '(al)':
+                goal+= 'al'
+                i+= 4
+            else:
+                goal += command[i]
+                i += 1
+
+        return goal
