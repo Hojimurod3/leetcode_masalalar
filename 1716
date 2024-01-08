@@ -1,0 +1,15 @@
+class Solution:
+    def totalMoney(self, n: int) -> int:
+        total_money = 0
+        current_money = 1
+        current_day = 1
+
+        while current_day <= n:
+            total_money += current_money
+            current_day += 1
+            current_money += 1
+
+            if current_day % 7 == 1:  
+                current_money = current_day // 7 + 1
+
+        return total_money
